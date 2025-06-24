@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const tasksSchema = new mongoose.Schema({
+const taskSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -14,4 +14,8 @@ const tasksSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+}, {
+        timestamps: true
 })
+    
+export default mongoose.model('Task', taskSchema);
